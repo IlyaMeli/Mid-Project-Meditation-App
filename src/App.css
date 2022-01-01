@@ -1,3 +1,11 @@
 .App {
   height: 100vh;
 }
+video {
+  pointer-events: none;
+  /* height: 100%; */
+  min-width: 100%;
+  position: fixed;
+  overflow: hidden;
+  z-index: 0;
+}

@@ -1,4 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
+import vid from "../src/assets/videos/sea.mp4";
+
 import "./App.css";
 import Router from "./component/Router/Router";
 import AppContext from "./component/AppContext/AppContext";
@@ -8,14 +10,20 @@ function App() {
   const routerProps = { CLIENT_ID };
 
   let [user, setUser] = useState(null);
+  let [level, setLevel] = useState(null);
   let context = {
     user,
     setUser,
+    level,
+    setLevel,
   };
 
   return (
     <AppContext.Provider value={context}>
       <div className="App">
+        <video muted loop autoplay="autoplay">
+          <source src={vid} type="video/mp4" />
+        </video>
         <Router routerProps={routerProps} />
       </div>
     </AppContext.Provider>
