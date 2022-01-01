@@ -1,0 +1,16 @@
+.nav-container {
+  display: flex;
+  /* border: solid 1px red; */
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  height: 5%;
+  width: 100%;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 50;
+}
+.nav-li a {
+  text-decoration: none;
+  color: white;
+}
