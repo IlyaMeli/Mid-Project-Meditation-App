@@ -21,7 +21,7 @@ function App() {
   return (
     <AppContext.Provider value={context}>
       <div className="App">
-        <video muted loop autoplay="autoplay">
+        <video muted loop autoPlay="autoplay">
           <source src={vid} type="video/mp4" />
         </video>
         <Router routerProps={routerProps} />

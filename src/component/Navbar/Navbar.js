@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import SignOut from "../SignOut/SignOut";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { clientId } = props;
   return (
     <>
       <ul className="nav-container">
@@ -19,7 +21,8 @@ const Navbar = () => {
           <Link to="/dashboard">Dashboard</Link>
         </li>
         <li className="nav-li">
-          <Link to="/placeholder">SignOut</Link>
+          {/* <Link to="/placeholder">SignOut</Link> */}
+          <SignOut clientId={clientId} />
         </li>
       </ul>
     </>

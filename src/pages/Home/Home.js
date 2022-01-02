@@ -15,9 +15,6 @@ const Home = () => {
   return (
     <>
       <div className="home-container">
-        {/* <video muted loop autoplay="autoplay">
-          <source src={vid} type="video/mp4" />
-        </video> */}
         <h1>
           <TextTransition
             text={TEXTS[index % TEXTS.length]}

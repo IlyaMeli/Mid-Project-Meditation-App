@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./meditate.css";
+import AppContext from "../../component/AppContext/AppContext";
 
 const Meditate = () => {
+  const appContext = useContext(AppContext);
   const [cardLevel, setLevelCard] = useState(false);
   const [typeName, setTypeName] = useState("");
 
   const handleFlip = (type) => {
     setLevelCard((cardLevel) => !cardLevel);
-
+    console.log("from meditate:", appContext);
     setTypeName(type);
   };
 
@@ -46,11 +48,6 @@ const Meditate = () => {
               </div>
             </>
           )}
-          {/* <div onClick={handleFlip} className="level" role="button">
-              Beginner
-            </div>
-            <div className="level">Intermediate</div>
-            <div className="level">Expert</div> */}
         </div>
       </div>
     </>
