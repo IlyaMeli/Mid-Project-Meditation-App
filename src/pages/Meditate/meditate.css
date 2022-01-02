@@ -35,10 +35,13 @@
   /* gap: 2rem; */
   cursor: pointer;
 }
+.meditate-btn,
 .level {
   transition: 0.3s;
   padding: 0.5rem;
+  cursor: pointer;
 }
+.meditate-btn:hover,
 .level:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
