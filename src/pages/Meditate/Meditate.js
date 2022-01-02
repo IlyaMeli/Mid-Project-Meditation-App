@@ -11,6 +11,8 @@ const Meditate = () => {
     setLevelCard((cardLevel) => !cardLevel);
     console.log("from meditate:", appContext);
     setTypeName(type);
+    appContext.setLevel(type);
+    console.log(appContext);
   };
 
   return (
@@ -19,7 +21,16 @@ const Meditate = () => {
         <h2 className="meditate-title">Start Your Journey.</h2>
         <div className="meditate-card">
           {cardLevel ? (
-            <div>You choose {typeName} </div>
+            <>
+              <div>You choose {typeName} </div>
+              <div
+                onClick={() => {
+                  console.log(appContext.level);
+                }}
+              >
+                Meditate Now
+              </div>
+            </>
           ) : (
             <>
               <div>Choose Your Level</div>
@@ -29,21 +40,21 @@ const Meditate = () => {
                   className="level"
                   role="button"
                 >
-                  Beginner
+                  Beginner 5 minutes
                 </div>
                 <div
                   onClick={() => handleFlip("Intermediate")}
                   className="level"
                   role="button"
                 >
-                  Intermediate
+                  Intermediate 10 minutes
                 </div>
                 <div
                   onClick={() => handleFlip("Expert")}
                   className="level"
                   role="button"
                 >
-                  Expert
+                  Expert 25 minutes
                 </div>
               </div>
             </>

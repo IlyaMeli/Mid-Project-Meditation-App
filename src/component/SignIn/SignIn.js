@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { GoogleLogin } from "react-google-login";
 import AppContext from "../AppContext/AppContext";
 

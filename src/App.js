@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import vid from "../src/assets/videos/sea.mp4";
 
 import "./App.css";

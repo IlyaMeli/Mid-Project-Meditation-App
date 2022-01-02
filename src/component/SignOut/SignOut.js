@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { GoogleLogout } from "react-google-login";
-import { useHistory } from "react-router";
+// import { useHistory } from "react-router";
 
 import AppContext from "../AppContext/AppContext";
 
