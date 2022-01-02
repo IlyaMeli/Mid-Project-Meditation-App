@@ -11,11 +11,21 @@ function App() {
 
   let [user, setUser] = useState(null);
   let [level, setLevel] = useState(null);
+  const [timerValue, setTimerValue] = useState(0);
+  const [levelTimes, setLevelTimes] = useState({
+    beginner: 5,
+    intermediate: 10,
+    expert: 25,
+  });
   let context = {
     user,
     setUser,
     level,
     setLevel,
+    setTimerValue,
+    timerValue,
+    setLevelTimes,
+    levelTimes,
   };
 
   return (

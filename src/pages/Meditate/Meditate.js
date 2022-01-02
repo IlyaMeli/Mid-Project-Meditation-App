@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import "./meditate.css";
 import AppContext from "../../component/AppContext/AppContext";
-import Meditation from "../../component/Meditation/Meditation";
+import CountDownThree from "../../component/CountDownThree/CountDownThre";
 
 const Meditate = () => {
   const appContext = useContext(AppContext);
@@ -18,10 +18,11 @@ const Meditate = () => {
   };
 
   const createMeditation = () => {
-    return <Meditation />;
+    return <CountDownThree />;
   };
   const handleMeditate = () => {
     setMedStatement((meditationState) => !meditationState);
+    appContext.setTimerValue(appContext.levelTimes[typeName]);
   };
 
   return (
@@ -43,21 +44,21 @@ const Meditate = () => {
                   <div>Choose Your Level</div>
                   <div className="meditate-levels">
                     <div
-                      onClick={() => handleFlip("Beginner")}
+                      onClick={() => handleFlip("beginner")}
                       className="level"
                       role="button"
                     >
                       Beginner 5 minutes
                     </div>
                     <div
-                      onClick={() => handleFlip("Intermediate")}
+                      onClick={() => handleFlip("intermediate")}
                       className="level"
                       role="button"
                     >
                       Intermediate 10 minutes
                     </div>
                     <div
-                      onClick={() => handleFlip("Expert")}
+                      onClick={() => handleFlip("expert")}
                       className="level"
                       role="button"
                     >
