@@ -8,9 +8,11 @@
   width: 100%;
   position: fixed;
   background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
   z-index: 50;
 }
 .nav-li a {
   text-decoration: none;
   color: white;
+  font-size: 1.2rem;
 }

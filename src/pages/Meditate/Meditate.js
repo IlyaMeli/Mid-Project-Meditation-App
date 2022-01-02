@@ -2,12 +2,20 @@ import React, { useState, useContext } from "react";
 import "./meditate.css";
 import AppContext from "../../component/AppContext/AppContext";
 import CountDownThree from "../../component/CountDownThree/CountDownThre";
+// import audio from "../../assets/audios/meditate.mp3";
 
 const Meditate = () => {
   const appContext = useContext(AppContext);
   const [cardLevel, setLevelCard] = useState(false);
   const [typeName, setTypeName] = useState("");
   const [meditationState, setMedStatement] = useState(true);
+  // const [isPlaying, setIsPlaying] = useState(false);
+  // let meditateAudio = new Audio(audio);
+
+  // const toggleAudio = () => {
+  //   isPlaying ? meditateAudio.pause() : meditateAudio.play();
+  //   setIsPlaying((isPlaying) => !isPlaying);
+  // };
 
   const handleFlip = (type) => {
     setLevelCard((cardLevel) => !cardLevel);
@@ -23,6 +31,7 @@ const Meditate = () => {
   const handleMeditate = () => {
     setMedStatement((meditationState) => !meditationState);
     appContext.setTimerValue(appContext.levelTimes[typeName]);
+    // toggleAudio();
   };
 
   return (
