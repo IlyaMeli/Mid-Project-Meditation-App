@@ -22,7 +22,9 @@ const Navbar = (props) => {
         </li>
         <li className="nav-li">
           {/* <Link to="/placeholder">SignOut</Link> */}
-          <SignOut clientId={clientId} />
+          <Link to="/">
+            <SignOut clientId={clientId} />
+          </Link>
         </li>
       </ul>
     </>

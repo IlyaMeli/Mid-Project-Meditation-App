@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import Countdown from "react-countdown";
 import AppContext from "../../component/AppContext/AppContext";
 import audio from "../../assets/audios/meditate.mp3";
@@ -6,8 +6,8 @@ import "./meditationtimer.css";
 
 const MeditationTimer = () => {
   const appContext = useContext(AppContext);
-  const [isPlaying, setIsPlaying] = useState(false);
   let meditateAudio = new Audio(audio);
+
   useEffect(() => {
     meditateAudio.play();
 
@@ -15,15 +15,12 @@ const MeditationTimer = () => {
       meditateAudio.pause();
     };
   }, []);
-  // const toggleAudio = () => {
-  // isPlaying ? meditateAudio.pause() : meditateAudio.play();
-  //   setIsPlaying((isPlaying) => !isPlaying);
-  // };
 
   const onComplete = () => {
     meditateAudio.pause();
   };
   const timeValue = appContext.timerValue * 60 * 1000;
+
   const renderer = ({ minutes, seconds, completed }) => {
     if (completed) {
       // Render a completed state
@@ -31,8 +28,21 @@ const MeditationTimer = () => {
     } else {
       // Render a countdown
       return (
-        <span className="meditate-timer">
-          {minutes}:{seconds === 0 || seconds < 10 ? "0" + seconds : seconds}
+        <span
+          onClick={() => {
+            console.log(appContext.user.medTotalTime);
+            appContext.setUser((prevState) => {
+              return {
+                ...prevState,
+                medTotalTime: prevState.medTotalTime + appContext.timerValue,
+                medLevel: appContext.level,
+              };
+            });
+            console.log(appContext.user);
+          }}
+          className="meditate-timer"
+        >
+          {minutes}:{seconds < 10 ? "0" + seconds : seconds}
         </span>
       );
     }

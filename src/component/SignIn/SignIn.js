@@ -10,10 +10,14 @@ const SignIn = (props) => {
     console.log("Signed in as " + user.getBasicProfile().getName());
     console.log(user.getBasicProfile().getId());
     const basicProfile = user.getBasicProfile();
+    //check in DB if user exists --->
+    // get userData from DB (MOCKAPI);
     appContext.setUser({
       gid: basicProfile.getId(),
       name: basicProfile.getName(),
       email: basicProfile.getEmail(),
+      medTotalTime: 0,
+      medLevel: "",
     });
   };
 
@@ -23,6 +27,7 @@ const SignIn = (props) => {
 
   return (
     <div>
+      {console.log("from sign in for Reut:", appContext.user)}
       <GoogleLogin
         clientId={clientId}
         buttonText="Login"

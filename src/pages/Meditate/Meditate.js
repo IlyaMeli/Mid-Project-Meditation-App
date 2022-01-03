@@ -9,20 +9,13 @@ const Meditate = () => {
   const [cardLevel, setLevelCard] = useState(false);
   const [typeName, setTypeName] = useState("");
   const [meditationState, setMedStatement] = useState(true);
-  // const [isPlaying, setIsPlaying] = useState(false);
-  // let meditateAudio = new Audio(audio);
-
-  // const toggleAudio = () => {
-  //   isPlaying ? meditateAudio.pause() : meditateAudio.play();
-  //   setIsPlaying((isPlaying) => !isPlaying);
-  // };
 
   const handleFlip = (type) => {
     setLevelCard((cardLevel) => !cardLevel);
     console.log("from meditate:", appContext);
     setTypeName(type);
     appContext.setLevel(type);
-    console.log(appContext);
+    // console.log(appContext);
   };
 
   const createMeditation = () => {
@@ -31,7 +24,6 @@ const Meditate = () => {
   const handleMeditate = () => {
     setMedStatement((meditationState) => !meditationState);
     appContext.setTimerValue(appContext.levelTimes[typeName]);
-    // toggleAudio();
   };
 
   return (
@@ -53,21 +45,21 @@ const Meditate = () => {
                   <div>Choose Your Level</div>
                   <div className="meditate-levels">
                     <div
-                      onClick={() => handleFlip("beginner")}
+                      onClick={() => handleFlip("Beginner")}
                       className="level"
                       role="button"
                     >
                       Beginner 5 minutes
                     </div>
                     <div
-                      onClick={() => handleFlip("intermediate")}
+                      onClick={() => handleFlip("Intermediate")}
                       className="level"
                       role="button"
                     >
                       Intermediate 10 minutes
                     </div>
                     <div
-                      onClick={() => handleFlip("expert")}
+                      onClick={() => handleFlip("Expert")}
                       className="level"
                       role="button"
                     >

@@ -14,6 +14,14 @@ const SignOut = (props) => {
   const onSuccess = function () {
     console.log("Signed out successfully");
     console.log(appContext);
+    //   appContext.setUser({
+    //     gid: "",
+    //     name: "",
+    //     email: "",
+    //     medTotalTime: 0,
+    //     medLevel: "",
+    //   });
+    // };
     appContext.setUser(null);
   };
 

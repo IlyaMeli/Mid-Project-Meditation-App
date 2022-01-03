@@ -5,6 +5,7 @@ import SpecialRoute from "../SpecialRoute/SpecialRoute";
 import Navbar from "../Navbar/Navbar";
 import Home from "../../pages/Home/Home";
 import Meditate from "../../pages/Meditate/Meditate";
+import DashBoard from "../../pages/DashBoard/DashBoard";
 import AppContext from "../AppContext/AppContext";
 
 const Router = ({ routerProps }) => {
@@ -30,6 +31,12 @@ const Router = ({ routerProps }) => {
         <Route exact path="/meditate">
           <SpecialRoute condition={appContext.user}>
             <Meditate />
+            <Redirect to="/signin" />
+          </SpecialRoute>
+        </Route>
+        <Route exact path="/dashboard">
+          <SpecialRoute condition={appContext.user}>
+            <DashBoard />
             <Redirect to="/signin" />
           </SpecialRoute>
         </Route>
