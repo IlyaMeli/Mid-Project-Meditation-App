@@ -15,19 +15,21 @@
 
 .meditate-card {
   padding: 1rem;
-  border: solid 1px rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   width: 30%;
   height: 30%;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
   align-items: center;
+  justify-content: center;
   gap: 30%;
   color: white;
   border-radius: 10px;
 }
 .meditate-title {
   font-size: 5rem;
+  font-weight: 200;
 }
 .meditate-levels {
   display: flex;

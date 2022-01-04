@@ -11,9 +11,13 @@ const DashBoard = () => {
   };
 
   const showMinutesOrHours = () => {
+    if (appContext.user.medTotalTime > 60) {
+      return `${Math.floor(appContext.user.medTotalTime / 60)} Hour`;
+    }
     if (appContext.user.medTotalTime === 60) {
       return `${appContext.user.medTotalTime / 60} Hour`;
     }
+
     if (appContext.user.medTotalTime >= 120) {
       return `${Math.floor(appContext.user.medTotalTime / 60)} Hours`;
     } else {
@@ -23,6 +27,7 @@ const DashBoard = () => {
 
   return (
     <div className="dashboard-container">
+      <h2 className="dash-title">My Journey</h2>
       <div className="dashboard-content">
         <div className="dashboard-user-info">
           <div className="dash-name">{appContext.user.name}</div>
@@ -45,7 +50,7 @@ const DashBoard = () => {
             <div>Rookie</div>
             <div>Pro</div>
             <div>Elite</div>
-            <div>Master 👑</div>
+            <div>Master</div>
           </div>
         </div>
       </div>

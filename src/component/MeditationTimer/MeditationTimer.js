@@ -13,6 +13,13 @@ const MeditationTimer = () => {
 
     return () => {
       meditateAudio.pause();
+      appContext.setUser((prevState) => {
+        return {
+          ...prevState,
+          medTotalTime: prevState.medTotalTime + appContext.timerValue,
+          medLevel: appContext.level,
+        };
+      });
     };
   }, []);
 
@@ -29,17 +36,17 @@ const MeditationTimer = () => {
       // Render a countdown
       return (
         <span
-          onClick={() => {
-            console.log(appContext.user.medTotalTime);
-            appContext.setUser((prevState) => {
-              return {
-                ...prevState,
-                medTotalTime: prevState.medTotalTime + appContext.timerValue,
-                medLevel: appContext.level,
-              };
-            });
-            console.log(appContext.user);
-          }}
+          // onClick={() => {
+          //   console.log(appContext.user.medTotalTime);
+          //   appContext.setUser((prevState) => {
+          //     return {
+          //       ...prevState,
+          //       medTotalTime: prevState.medTotalTime + appContext.timerValue,
+          //       medLevel: appContext.level,
+          //     };
+          //   });
+          //   console.log(appContext.user);
+          // }}
           className="meditate-timer"
         >
           {minutes}:{seconds < 10 ? "0" + seconds : seconds}
@@ -50,7 +57,8 @@ const MeditationTimer = () => {
 
   return (
     <Countdown
-      date={Date.now() + timeValue}
+      // date={Date.now() + timeValue}
+      date={Date.now() + 3000}
       renderer={renderer}
       onComplete={onComplete}
     />
