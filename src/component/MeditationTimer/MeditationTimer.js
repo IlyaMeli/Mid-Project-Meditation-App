@@ -3,7 +3,7 @@ import Countdown from "react-countdown";
 import AppContext from "../../component/AppContext/AppContext";
 import audio from "../../assets/audios/meditate.mp3";
 import "./meditationtimer.css";
-import api from "../../api";
+// import api from "../../api";
 
 const MeditationTimer = () => {
   const appContext = useContext(AppContext);
@@ -12,7 +12,7 @@ const MeditationTimer = () => {
   useEffect(() => {
     meditateAudio.play();
 
-    return async () => {
+    return () => {
       meditateAudio.pause();
       appContext.setUser((prevState) => {
         return {
@@ -21,6 +21,7 @@ const MeditationTimer = () => {
           medLevel: appContext.level,
         };
       });
+      // appContext.f();
       // console.log("check for reut:", appContext.user);
       // await api.putItem(appContext.user);
     };

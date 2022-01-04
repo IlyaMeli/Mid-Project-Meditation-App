@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import "./meditate.css";
 import AppContext from "../../component/AppContext/AppContext";
 import CountDownThree from "../../component/CountDownThree/CountDownThre";
-// import audio from "../../assets/audios/meditate.mp3";
+
 
 const Meditate = () => {
   const appContext = useContext(AppContext);
@@ -15,7 +15,6 @@ const Meditate = () => {
     console.log("from meditate:", appContext);
     setTypeName(type);
     appContext.setLevel(type);
-    // console.log(appContext);
   };
 
   const createMeditation = () => {

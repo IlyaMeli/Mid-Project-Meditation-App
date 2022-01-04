@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect  } from "react";
 import TextTransition, { presets } from "react-text-transition";
 import "./home.css";
-// import vid from "../../assets/videos/sea.mp4";
+
 
 const Home = () => {
   const TEXTS = ["Free Your Mind", "Meditate Today", "Mordi"];
@@ -11,6 +11,8 @@ const Home = () => {
     const intervalId = setInterval(() => setIndex((index) => index + 1), 2000);
     return () => clearTimeout(intervalId);
   }, []);
+  
+
 
   return (
     <>

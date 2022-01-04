@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { GoogleLogin } from "react-google-login";
 import api from "../../api";
 import AppContext from "../AppContext/AppContext";
@@ -7,7 +7,9 @@ const SignIn = (props) => {
   const { clientId } = props;
   const appContext = useContext(AppContext);
 
-  const onSuccess = async (user) => {
+  
+
+  const onSuccess = (user) => {
     console.log("Signed in as " + user.getBasicProfile().getName());
     console.log(user.getBasicProfile().getId());
     const basicProfile = user.getBasicProfile();
@@ -21,8 +23,9 @@ const SignIn = (props) => {
       medLevel: "",
       // id: 1,
     });
-    console.log("check reut:", appContext.user);
-    await api.postItem(appContext.user);
+    appContext.f();
+    // console.log("check reut:", appContext.user);
+    // await api.postItem(appContext.user);
   };
 
   const onFailure = (error) => {
