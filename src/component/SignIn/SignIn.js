@@ -27,7 +27,6 @@ const SignIn = (props) => {
 
   return (
     <div>
-      {console.log("from sign in for Reut:", appContext.user)}
       <GoogleLogin
         clientId={clientId}
         buttonText="Login"

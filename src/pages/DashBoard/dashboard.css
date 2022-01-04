@@ -17,7 +17,7 @@
   height: 50%;
   width: 50%;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
@@ -33,19 +33,18 @@
   /* background-color: rgba(0, 195, 255, 0.3); */
   background: linear-gradient(
     180deg,
-    rgba(49, 144, 251, 0.5) 0%,
-    rgba(23, 56, 100, 0.5) 82%
+    rgba(13, 14, 34, 0.5) 0%,
+    rgba(31, 31, 31, 0.5) 82%
   );
   padding: 1rem;
   width: 50%;
 }
 .dash-email {
   border-radius: 10px;
-  background-color: rgba(255, 176, 72, 0.3);
   background: linear-gradient(
     180deg,
-    rgba(251, 204, 49, 0.5) 0%,
-    rgba(161, 88, 20, 0.5) 82%
+    rgba(13, 14, 34, 0.5) 0%,
+    rgba(31, 31, 31, 0.5) 82%
   );
   padding: 1rem;
   width: 50%;
@@ -62,4 +61,10 @@
   background-color: rgba(31, 44, 71, 0.5);
   padding: 1rem;
   height: 30%;
+}
+
+.dash-progress-words {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
