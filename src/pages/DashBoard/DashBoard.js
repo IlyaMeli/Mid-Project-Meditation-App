@@ -1,10 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import AppContext from "../../component/AppContext/AppContext";
 import { Line } from "rc-progress";
+import api from "../../api";
 import "./dashboard.css";
 
 const DashBoard = () => {
   const appContext = useContext(AppContext);
+
+  useEffect(() => {
+    const getDashData = async () => {
+      const dashData = await api.getItems();
+      console.log(dashData);
+    };
+    getDashData();
+  }, []);
 
   const timeToProgress = () => {
     return (appContext.user.medTotalTime * 100) / 600;

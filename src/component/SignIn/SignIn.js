@@ -18,6 +18,7 @@ const SignIn = (props) => {
       email: basicProfile.getEmail(),
       medTotalTime: 0,
       medLevel: "",
+      id: 1,
     });
   };
 

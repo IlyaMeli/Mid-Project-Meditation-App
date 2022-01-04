@@ -3,6 +3,7 @@ import Countdown from "react-countdown";
 import AppContext from "../../component/AppContext/AppContext";
 import audio from "../../assets/audios/meditate.mp3";
 import "./meditationtimer.css";
+import api from "../../api";
 
 const MeditationTimer = () => {
   const appContext = useContext(AppContext);
@@ -11,7 +12,7 @@ const MeditationTimer = () => {
   useEffect(() => {
     meditateAudio.play();
 
-    return () => {
+    return async () => {
       meditateAudio.pause();
       appContext.setUser((prevState) => {
         return {
@@ -20,10 +21,12 @@ const MeditationTimer = () => {
           medLevel: appContext.level,
         };
       });
+      // console.log("check for reut:", appContext.user);
+      // await api.putItem(appContext.user);
     };
   }, []);
 
-  const onComplete = () => {
+  const onComplete = async () => {
     meditateAudio.pause();
   };
   const timeValue = appContext.timerValue * 60 * 1000;
@@ -35,20 +38,7 @@ const MeditationTimer = () => {
     } else {
       // Render a countdown
       return (
-        <span
-          // onClick={() => {
-          //   console.log(appContext.user.medTotalTime);
-          //   appContext.setUser((prevState) => {
-          //     return {
-          //       ...prevState,
-          //       medTotalTime: prevState.medTotalTime + appContext.timerValue,
-          //       medLevel: appContext.level,
-          //     };
-          //   });
-          //   console.log(appContext.user);
-          // }}
-          className="meditate-timer"
-        >
+        <span className="meditate-timer">
           {minutes}:{seconds < 10 ? "0" + seconds : seconds}
         </span>
       );
