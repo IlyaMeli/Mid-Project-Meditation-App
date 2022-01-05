@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useContext, useState } from "react";
 import Countdown from "react-countdown";
 import AppContext from "../../component/AppContext/AppContext";
@@ -69,7 +70,7 @@ const MeditationTimer = () => {
       ) : (
         <Countdown
           date={Date.now() + timeValue}
-          // date={Date.now() + 3000}
+          // date={Date.now() + 4000}
           renderer={renderer}
           onComplete={onComplete}
         />
