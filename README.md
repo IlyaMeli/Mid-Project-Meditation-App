@@ -4,6 +4,8 @@
 ![My Project](https://i.giphy.com/media/6OAikdRZ48IOEjeM8H/giphy-downsized-large.gif)
 
 
+<div></div>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
