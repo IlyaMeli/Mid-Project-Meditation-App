@@ -13,11 +13,11 @@
 <h3 align="center">Meditation App</h3>
   <p align="center">
     <br />
-    <a href="https://ilya-meditate.netlify.app/">View Demo</a> 
+    <a href="https://ilya-meditate.netlify.app/">View Live Site</a> 
   </p>
   
   <p>
-    This project was created with Create-react-app
+    This project was created with Create-react-app, as Middle Project in AppleSeeds BootCamp, Enjoy your time.
   </p>
 </div>
 
@@ -25,6 +25,8 @@
 
 * [React.js](https://reactjs.org/)
 * [MockApi](https://mockapi.io/)
+* [ContextApi](https://reactjs.org/docs/context.html)
+
 
 
 
