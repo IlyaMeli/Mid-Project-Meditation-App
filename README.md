@@ -10,35 +10,24 @@
   <img src="https://i.giphy.com/media/6OAikdRZ48IOEjeM8H/giphy-downsized-large.gif" alt="animated" />
   </p>
 
-
-<h3 align="center">project_title</h3>
-
+<h3 align="center">Meditation App</h3>
   <p align="center">
-    project_description
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://ilya-meditate.netlify.app/">View Demo</a> 
+  </p>
+  
+  <p>
+    This project was created with Create-react-app
   </p>
 </div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Built With
 
-## Available Scripts
+* [React.js](https://reactjs.org/)
+* [MockApi](https://mockapi.io/)
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
 
