@@ -9,5 +9,15 @@ h1 {
   color: white;
   font-size: 10rem;
   white-space: nowrap;
-  font-weight: 500;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  h1 {
+    color: white;
+    /* font-size: 5rem; */
+    font-size: 19vw;
+    white-space: nowrap;
+  }
 }

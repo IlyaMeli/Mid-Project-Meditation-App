@@ -15,7 +15,6 @@
 }
 
 .dashboard-content {
-  /* border: 1px solid white; */
   padding: 1rem;
   height: 50%;
   width: 50%;
@@ -33,7 +32,6 @@
 }
 .dash-name {
   border-radius: 10px;
-  /* background-color: rgba(0, 195, 255, 0.3); */
   background: linear-gradient(
     180deg,
     rgba(13, 14, 34, 0.5) 0%,
@@ -55,7 +53,6 @@
 }
 .dash-total-time {
   border-radius: 10px;
-  /* background-color: rgba(39, 31, 71, 0.5); */
   background: linear-gradient(
     180deg,
     rgba(13, 14, 34, 0.5) 0%,
@@ -66,13 +63,7 @@
 }
 .dash-med-lvl {
   border-radius: 10px;
-  /* background-color: rgba(31, 44, 71, 0.5); */
   background-color: rgba(31, 31, 31, 0.5);
-  /* background: linear-gradient(
-    180deg,
-    rgba(13, 14, 34, 0.5) 0%,
-    rgba(31, 31, 31, 0.5) 82%
-  ); */
   padding: 1rem;
   height: 30%;
 }
@@ -86,4 +77,30 @@
 .dash-title {
   font-size: 4rem;
   font-weight: 200;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    font-size: 4vw;
+    text-align: center;
+  }
+  .dashboard-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* width: 100%; */
+    /* height: 40%; */
+    /* border: solid 1px red; */
+  }
+  .dash-name,
+  .dash-email {
+    width: 100%;
+    height: 100%;
+  }
+  .dashboard-content {
+    padding: 1rem;
+    height: 70%;
+    width: 70%;
+    gap: 1rem;
+  }
 }
