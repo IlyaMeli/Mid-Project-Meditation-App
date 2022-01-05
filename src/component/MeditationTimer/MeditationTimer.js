@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import Countdown from "react-countdown";
 import AppContext from "../../component/AppContext/AppContext";
 import audio from "../../assets/audios/meditate.mp3";
@@ -8,6 +8,7 @@ import "./meditationtimer.css";
 const MeditationTimer = () => {
   const appContext = useContext(AppContext);
   let meditateAudio = new Audio(audio);
+  const [myCompleted, setMyCompleted] = useState(false);
 
   useEffect(() => {
     meditateAudio.play();
@@ -33,7 +34,18 @@ const MeditationTimer = () => {
         medLevel: appContext.level,
       };
     });
+    setMyCompleted(true);
   };
+  // const onComplete = () => {
+  //   meditateAudio.pause();
+  //   appContext.setUserForPut((prevState) => {
+  //     return {
+  //       ...prevState,
+  //       medTotalTime: prevState.medTotalTime + appContext.timerValue,
+  //       medLevel: appContext.level,
+  //     };
+  //   });
+  // };
   const timeValue = appContext.timerValue * 60 * 1000;
 
   const renderer = ({ minutes, seconds, completed }) => {
@@ -51,12 +63,18 @@ const MeditationTimer = () => {
   };
 
   return (
-    <Countdown
-      // date={Date.now() + timeValue }
-      date={Date.now() + 3000}
-      renderer={renderer}
-      onComplete={onComplete}
-    />
+    <>
+      {myCompleted ? (
+        <div>Great Job Sir</div>
+      ) : (
+        <Countdown
+          // date={Date.now() + timeValue }
+          date={Date.now() + 3000}
+          renderer={renderer}
+          onComplete={onComplete}
+        />
+      )}
+    </>
   );
 };
 

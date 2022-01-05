@@ -20,11 +20,6 @@ function App() {
   });
   const [dashData, setDashData] = useState(null);
 
-  // const f = async () =>{
-  //   console.log("REUT!!!",userData)
-  //   await api.putItem(userData);
-  // }
-
   const context = {
     dashData,
     setDashData,
@@ -38,20 +33,23 @@ function App() {
     timerValue,
     setLevelTimes,
     levelTimes,
-    // f,
   };
 
   useEffect(() => {
     const handlePost = async () => {
       if (user) {
         const data = await api.getItems();
+        console.log("check for Shmuel", data);
         const userData = data.find((apiUser) => apiUser.gid === user.gid);
+        console.log("check for Shmuel2", userData);
         setUserForPut(userData);
         if (!userData) {
-          await api.postItem(user);
+          const { data } = await api.postItem(user);
+          console.log("its shmuel agian:", data);
+          setUserForPut(data);
         }
       }
-      console.log("Ilya:", user);
+      console.log("Ilya 123456:", user);
     };
     user && handlePost();
   }, [user]);
@@ -60,6 +58,8 @@ function App() {
     const handlePut = async () => {
       if (userForPut) {
         await api.putItem(userForPut);
+        // const itemData = await api.getItem(user.id);
+        // setUser(itemData);
       }
     };
     console.log("Ilya from PUT func:", userForPut);

@@ -9,6 +9,10 @@ export default class api {
     const { data } = await baseURL.get();
     return data;
   };
+  static getItem = async (id) => {
+    const { data } = await baseURL.get(`/${id}`);
+    return data;
+  };
 
   static putItem = async (item) => {
     return await baseURL.put(`/${item.id}`, item);

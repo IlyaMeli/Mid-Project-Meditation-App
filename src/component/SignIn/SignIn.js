@@ -13,17 +13,14 @@ const SignIn = (props) => {
     const basicProfile = user.getBasicProfile();
     //check in DB if user exists --->
     // get userData from DB (MOCKAPI);
+
     appContext.setUser({
       gid: basicProfile.getId(),
       name: basicProfile.getName(),
       email: basicProfile.getEmail(),
       medTotalTime: 0,
       medLevel: "",
-      // id: 1,
     });
-    // appContext.f();
-    // console.log("check reut:", appContext.user);
-    // await api.postItem(appContext.user);
   };
 
   const onFailure = (error) => {
