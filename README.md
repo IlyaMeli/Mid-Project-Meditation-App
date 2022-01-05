@@ -4,9 +4,11 @@
 
 
 
-![My Project](https://i.giphy.com/media/6OAikdRZ48IOEjeM8H/giphy-downsized-large.gif)
-
 <div align="center">
+  
+  <p align="center">
+  <img src="https://i.giphy.com/media/6OAikdRZ48IOEjeM8H/giphy-downsized-large.gif" alt="animated" />
+  </p>
 
 
 <h3 align="center">project_title</h3>
