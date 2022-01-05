@@ -11,14 +11,14 @@ function App() {
   const routerProps = { CLIENT_ID };
   let [user, setUser] = useState(null);
   let [level, setLevel] = useState(null);
-  const [userData, setUserData] = useState(null);
-  const [wasChanged, setWasChanged] = useState(false);
+  const [userForPut, setUserForPut] = useState(null);
   const [timerValue, setTimerValue] = useState(0);
   const [levelTimes, setLevelTimes] = useState({
     Beginner: 5,
     Intermediate: 10,
     Expert: 25,
   });
+  const [dashData, setDashData] = useState(null);
 
   // const f = async () =>{
   //   console.log("REUT!!!",userData)
@@ -26,6 +26,10 @@ function App() {
   // }
 
   const context = {
+    dashData,
+    setDashData,
+    userForPut,
+    setUserForPut,
     user,
     setUser,
     level,
@@ -34,9 +38,6 @@ function App() {
     timerValue,
     setLevelTimes,
     levelTimes,
-    wasChanged,
-    setWasChanged,
-    setUserData,
     // f,
   };
 
@@ -45,7 +46,7 @@ function App() {
       if (user) {
         const data = await api.getItems();
         const userData = data.find((apiUser) => apiUser.gid === user.gid);
-        setUserData(userData);
+        setUserForPut(userData);
         if (!userData) {
           await api.postItem(user);
         }
@@ -54,6 +55,16 @@ function App() {
     };
     user && handlePost();
   }, [user]);
+
+  useEffect(() => {
+    const handlePut = async () => {
+      if (userForPut) {
+        await api.putItem(userForPut);
+      }
+    };
+    console.log("Ilya from PUT func:", userForPut);
+    handlePut();
+  }, [userForPut]);
 
   return (
     <AppContext.Provider value={context}>

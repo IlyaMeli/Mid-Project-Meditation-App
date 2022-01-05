@@ -7,8 +7,6 @@ const SignIn = (props) => {
   const { clientId } = props;
   const appContext = useContext(AppContext);
 
-  
-
   const onSuccess = (user) => {
     console.log("Signed in as " + user.getBasicProfile().getName());
     console.log(user.getBasicProfile().getId());
@@ -23,7 +21,7 @@ const SignIn = (props) => {
       medLevel: "",
       // id: 1,
     });
-    appContext.f();
+    // appContext.f();
     // console.log("check reut:", appContext.user);
     // await api.postItem(appContext.user);
   };

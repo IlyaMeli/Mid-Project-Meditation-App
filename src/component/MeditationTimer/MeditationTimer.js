@@ -14,21 +14,25 @@ const MeditationTimer = () => {
 
     return () => {
       meditateAudio.pause();
-      appContext.setUser((prevState) => {
-        return {
-          ...prevState,
-          medTotalTime: prevState.medTotalTime + appContext.timerValue,
-          medLevel: appContext.level,
-        };
-      });
-      // appContext.f();
-      // console.log("check for reut:", appContext.user);
-      // await api.putItem(appContext.user);
+      // appContext.setUserForPut((prevState) => {
+      //   return {
+      //     ...prevState,
+      //     medTotalTime: prevState.medTotalTime + appContext.timerValue,
+      //     medLevel: appContext.level,
+      //   };
+      // });
     };
   }, []);
 
-  const onComplete = async () => {
+  const onComplete = () => {
     meditateAudio.pause();
+    appContext.setUserForPut((prevState) => {
+      return {
+        ...prevState,
+        medTotalTime: prevState.medTotalTime + appContext.timerValue,
+        medLevel: appContext.level,
+      };
+    });
   };
   const timeValue = appContext.timerValue * 60 * 1000;
 
@@ -48,7 +52,7 @@ const MeditationTimer = () => {
 
   return (
     <Countdown
-      // date={Date.now() + timeValue}
+      // date={Date.now() + timeValue }
       date={Date.now() + 3000}
       renderer={renderer}
       onComplete={onComplete}
