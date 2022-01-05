@@ -68,8 +68,8 @@ const MeditationTimer = () => {
         <div>Great Job Sir</div>
       ) : (
         <Countdown
-          // date={Date.now() + timeValue }
-          date={Date.now() + 3000}
+          date={Date.now() + timeValue}
+          // date={Date.now() + 3000}
           renderer={renderer}
           onComplete={onComplete}
         />

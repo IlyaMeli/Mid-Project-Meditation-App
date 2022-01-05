@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import AppContext from "../../component/AppContext/AppContext";
 import { Line } from "rc-progress";
-import api from "../../api";
+// import api from "../../api";
 import "./dashboard.css";
 
 const DashBoard = () => {

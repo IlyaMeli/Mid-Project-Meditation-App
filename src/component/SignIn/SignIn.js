@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { GoogleLogin } from "react-google-login";
-import api from "../../api";
+// import api from "../../api";
 import AppContext from "../AppContext/AppContext";
 
 const SignIn = (props) => {

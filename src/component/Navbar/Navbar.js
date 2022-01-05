@@ -14,9 +14,9 @@ const Navbar = (props) => {
         <li className="nav-li">
           <Link to="/meditate">Meditate</Link>
         </li>
-        <li className="nav-li">
+        {/* <li className="nav-li">
           <Link to="/learn">Learn</Link>
-        </li>
+        </li> */}
 
         <li className="nav-li">
           <Link to="/dashboard">Dashboard</Link>
