@@ -1,12 +1,12 @@
-# Getting Started with Create React App
 
 
 
 
 
+
+![My Project](https://i.giphy.com/media/6OAikdRZ48IOEjeM8H/giphy-downsized-large.gif)
 
 <div align="center">
-![My Project](https://i.giphy.com/media/6OAikdRZ48IOEjeM8H/giphy-downsized-large.gif)
 
 
 <h3 align="center">project_title</h3>
