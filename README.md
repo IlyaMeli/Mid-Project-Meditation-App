@@ -10,7 +10,7 @@
   <img src="https://i.giphy.com/media/6OAikdRZ48IOEjeM8H/giphy-downsized-large.gif" alt="animated" />
   </p>
 
-<h3 align="center">Meditation App</h3>
+<h2 align="center">Meditation App</h2>
   <p align="center">
     <br />
     <a href="https://ilya-meditate.netlify.app/">View Live Site</a> 
