@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 
-![Alt Text](https://i.giphy.com/media/6OAikdRZ48IOEjeM8H/giphy-downsized-large.gif)
+![My Project](https://i.giphy.com/media/6OAikdRZ48IOEjeM8H/giphy-downsized-large.gif)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
