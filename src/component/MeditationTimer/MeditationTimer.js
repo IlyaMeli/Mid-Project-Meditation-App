@@ -66,7 +66,7 @@ const MeditationTimer = () => {
   return (
     <>
       {myCompleted ? (
-        <div>Great Job Sir</div>
+        <div>Great Job</div>
       ) : (
         <Countdown
           date={Date.now() + timeValue}
